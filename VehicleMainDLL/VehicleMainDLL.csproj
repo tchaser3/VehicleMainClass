@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindActiveVehicleMainByLocationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindActiveVehicleMainByLocationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindActiveVehicleMainByVehicleNumberDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,6 +163,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="FindActiveVehicleMainByLocationDataSet.xsc">
+      <DependentUpon>FindActiveVehicleMainByLocationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindActiveVehicleMainByLocationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindActiveVehicleMainByLocationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindActiveVehicleMainByLocationDataSet.xss">
+      <DependentUpon>FindActiveVehicleMainByLocationDataSet.xsd</DependentUpon>
+    </None>
     <None Include="FindActiveVehicleMainByVehicleNumberDataSet.xsc">
       <DependentUpon>FindActiveVehicleMainByVehicleNumberDataSet.xsd</DependentUpon>
     </None>

@@ -74,6 +74,24 @@ namespace VehicleMainDLL
         FindVehicleMainByVINNumberDataSet aFindVehicleMainByVINNumberDataSet;
         FindVehicleMainByVINNumberDataSetTableAdapters.FindVehicleMainByVINNumberTableAdapter aFindVehicleMainByVINNumberTableAdapter;
 
+        FindActiveVehicleMainByLocationDataSet aFindActiveVehicleMainByLocationDataSet;
+        FindActiveVehicleMainByLocationDataSetTableAdapters.FindActiveVehicleMainByLocationTableAdapter aFindActiveVehicleMainByLocationTableAdapter;
+
+        public FindActiveVehicleMainByLocationDataSet FindActiveVehicleMainByLocation(string strAssignedOffice)
+        {
+            try
+            {
+                aFindActiveVehicleMainByLocationDataSet = new FindActiveVehicleMainByLocationDataSet();
+                aFindActiveVehicleMainByLocationTableAdapter = new FindActiveVehicleMainByLocationDataSetTableAdapters.FindActiveVehicleMainByLocationTableAdapter();
+                aFindActiveVehicleMainByLocationTableAdapter.Fill(aFindActiveVehicleMainByLocationDataSet.FindActiveVehicleMainByLocation, strAssignedOffice);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main By Location " + Ex.Message);
+            }
+
+            return aFindActiveVehicleMainByLocationDataSet;
+        }
         public FindVehicleMainByVINNumberDataSet FindVehicleMainByVINNumber(string strVINNumber)
         {
             try
