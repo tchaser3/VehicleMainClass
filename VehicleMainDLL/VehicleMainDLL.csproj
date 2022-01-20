@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VehicleMainDLL</RootNamespace>
     <AssemblyName>VehicleMainDLL</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -142,6 +143,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateVehicleMainEmployeeIDEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateVehicleMainLocationEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateVehicleMainLocationEntry.xsd</DependentUpon>
     </Compile>
     <Compile Include="VehicleAssignmentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -375,6 +381,17 @@
     </None>
     <None Include="UpdateVehicleMainEmployeeIDEntry.xss">
       <DependentUpon>UpdateVehicleMainEmployeeIDEntry.xsd</DependentUpon>
+    </None>
+    <None Include="UpdateVehicleMainLocationEntry.xsc">
+      <DependentUpon>UpdateVehicleMainLocationEntry.xsd</DependentUpon>
+    </None>
+    <None Include="UpdateVehicleMainLocationEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UpdateVehicleMainLocationEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UpdateVehicleMainLocationEntry.xss">
+      <DependentUpon>UpdateVehicleMainLocationEntry.xsd</DependentUpon>
     </None>
     <None Include="VehicleAssignmentDataSet.xsc">
       <DependentUpon>VehicleAssignmentDataSet.xsd</DependentUpon>

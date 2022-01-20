@@ -77,6 +77,25 @@ namespace VehicleMainDLL
         FindActiveVehicleMainByLocationDataSet aFindActiveVehicleMainByLocationDataSet;
         FindActiveVehicleMainByLocationDataSetTableAdapters.FindActiveVehicleMainByLocationTableAdapter aFindActiveVehicleMainByLocationTableAdapter;
 
+        UpdateVehicleMainLocationEntryTableAdapters.QueriesTableAdapter aUpdateVehicleMainLocationTableAdapter;
+
+        public bool UpdateVehicleMainLocation(int intVehicleID, string strAssignedOffice)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aUpdateVehicleMainLocationTableAdapter = new UpdateVehicleMainLocationEntryTableAdapters.QueriesTableAdapter();
+                aUpdateVehicleMainLocationTableAdapter.UpdateVehicleMainLocation(intVehicleID, strAssignedOffice);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Location " + Ex.Message);
+
+                blnFatalError = true;
+            }
+            return blnFatalError;
+        }
         public FindActiveVehicleMainByLocationDataSet FindActiveVehicleMainByLocation(string strAssignedOffice)
         {
             try
