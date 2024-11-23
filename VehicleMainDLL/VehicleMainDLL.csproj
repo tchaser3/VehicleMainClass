@@ -94,6 +94,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindVehicleMainByVehicleIDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindVehicleMainByVehicleNumberDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindVehicleMainByVehicleNumberDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindVehicleMainByVINNumberDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +283,17 @@
     </None>
     <None Include="FindVehicleMainByVehicleIDDataSet.xss">
       <DependentUpon>FindVehicleMainByVehicleIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindVehicleMainByVehicleNumberDataSet.xsc">
+      <DependentUpon>FindVehicleMainByVehicleNumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindVehicleMainByVehicleNumberDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindVehicleMainByVehicleNumberDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindVehicleMainByVehicleNumberDataSet.xss">
+      <DependentUpon>FindVehicleMainByVehicleNumberDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindVehicleMainByVINNumberDataSet.xsc">
       <DependentUpon>FindVehicleMainByVINNumberDataSet.xsd</DependentUpon>

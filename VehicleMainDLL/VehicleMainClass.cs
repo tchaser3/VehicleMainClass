@@ -79,6 +79,24 @@ namespace VehicleMainDLL
 
         UpdateVehicleMainLocationEntryTableAdapters.QueriesTableAdapter aUpdateVehicleMainLocationTableAdapter;
 
+        FindVehicleMainByVehicleNumberDataSet aFindVehicleMainByVehicleNumberDataSet;
+        FindVehicleMainByVehicleNumberDataSetTableAdapters.FindVehicleMainByVehicleNumberTableAdapter aFindVehicleMainByVehicleNumberTableAdapter;
+
+        public FindVehicleMainByVehicleNumberDataSet FindVehicleMainByVehicleNumber(string strVehicleNumber)
+        {
+            try
+            {
+                aFindVehicleMainByVehicleNumberDataSet = new FindVehicleMainByVehicleNumberDataSet();
+                aFindVehicleMainByVehicleNumberTableAdapter = new FindVehicleMainByVehicleNumberDataSetTableAdapters.FindVehicleMainByVehicleNumberTableAdapter();
+                aFindVehicleMainByVehicleNumberTableAdapter.Fill(aFindVehicleMainByVehicleNumberDataSet.FindVehicleMainByVehicleNumber, strVehicleNumber);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By Vehicle Number " + Ex.ToString());
+            }
+
+            return aFindVehicleMainByVehicleNumberDataSet;
+        }
         public bool UpdateVehicleMainLocation(int intVehicleID, string strAssignedOffice)
         {
             bool blnFatalError = false;
@@ -90,7 +108,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Location " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Location " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -106,7 +124,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main By Location " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main By Location " + Ex.ToString());
             }
 
             return aFindActiveVehicleMainByLocationDataSet;
@@ -121,7 +139,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehlcle Main Class // Find Vehicle Main By VIN Number " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehlcle Main Class // Find Vehicle Main By VIN Number " + Ex.ToString());
             }
 
             return aFindVehicleMainByVINNumberDataSet;
@@ -136,7 +154,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main Short Vehicle Number " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main Short Vehicle Number " + Ex.ToString());
             }
 
             return aFindActiveVehicleMainShortVehicleNumberDataSet;
@@ -151,7 +169,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main For Assigned Office " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main For Assigned Office " + Ex.ToString());
             }
 
             return aFindVehicleMainForAssignedOfficeDataSet;
@@ -181,7 +199,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By Deactive Employees " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By Deactive Employees " + Ex.ToString());
             }
 
             return aFindVehicleMainByDeactiveEmployeesDataSet;
@@ -196,7 +214,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Video Main Class // Find Active Vehicle Main Sorted " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Video Main Class // Find Active Vehicle Main Sorted " + Ex.ToString());
             }
 
             return aFindActiveVehicleMainSortedDataSet;
@@ -211,7 +229,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Assigned By Employee ID " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Assigned By Employee ID " + Ex.ToString());
             }
 
             return aFindVehicleAssignedByEmployeeIDDataSet;
@@ -226,7 +244,7 @@ namespace VehicleMainDLL
             }
             catch(Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main For Unretirement " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main For Unretirement " + Ex.ToString());
             }
 
             return aFindVehicleMainForUnretirementDataSet;
@@ -242,7 +260,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Active " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Active " + Ex.ToString());
             }
 
             return blnFatalError;
@@ -258,7 +276,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Oil Change Information " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Oil Change Information " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -276,7 +294,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Edit " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Edit " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -293,7 +311,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By License Plate " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By License Plate " + Ex.ToString());
             }
 
             return aFindVehicleMainByLicensePlateDataSet;
@@ -308,7 +326,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By Vehicle ID " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main By Vehicle ID " + Ex.ToString());
             }
 
             return aFindVehicleMainByVehicleIDDataSet;
@@ -324,7 +342,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Available " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Available " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -342,7 +360,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Employee ID " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main Employee ID " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -359,7 +377,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main " + Ex.ToString());
             }
 
             return aFindActiveVehicleMainDataSet;
@@ -374,7 +392,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main By Vehicle Number " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Active Vehicle Main By Vehicle Number " + Ex.ToString());
             }
 
             return aFindActiveVehicleMainByVehicleNumberDataSet;
@@ -389,7 +407,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Get Vehicle Assignment Info " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Get Vehicle Assignment Info " + Ex.ToString());
             }
 
             return aVehicleAssignmentDataSet;
@@ -403,7 +421,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Update Vehicle Assignment DB " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Update Vehicle Assignment DB " + Ex.ToString());
             }
         }
         public int CreateVehicleID()
@@ -424,7 +442,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Create Vehicle ID " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "New Vehicle DLL // Create Vehicle ID " + Ex.ToString());
             }
 
             return intVehicleID;
@@ -440,7 +458,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Insert Vehicle Main " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Insert Vehicle Main " + Ex.ToString());
 
                 blnFatalError = true;
             }
@@ -457,7 +475,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Get Vehicle Main Info " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Get Vehicle Main Info " + Ex.ToString());
             }
 
             return aVehicleMainDataSet;
@@ -471,7 +489,7 @@ namespace VehicleMainDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main DB " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Update Vehicle Main DB " + Ex.ToString());
             }
         }
     }
