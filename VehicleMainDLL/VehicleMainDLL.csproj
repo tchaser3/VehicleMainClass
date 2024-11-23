@@ -114,6 +114,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindVehicleMainForUnretirementDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindVehicleMainToDeactivateDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindVehicleMainToDeactivateDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertVehicleMainEntry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -327,6 +332,17 @@
     </None>
     <None Include="FindVehicleMainForUnretirementDataSet.xss">
       <DependentUpon>FindVehicleMainForUnretirementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindVehicleMainToDeactivateDataSet.xsc">
+      <DependentUpon>FindVehicleMainToDeactivateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindVehicleMainToDeactivateDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindVehicleMainToDeactivateDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindVehicleMainToDeactivateDataSet.xss">
+      <DependentUpon>FindVehicleMainToDeactivateDataSet.xsd</DependentUpon>
     </None>
     <None Include="InsertVehicleMainEntry.xsc">
       <DependentUpon>InsertVehicleMainEntry.xsd</DependentUpon>

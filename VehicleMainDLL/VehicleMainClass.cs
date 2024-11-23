@@ -82,6 +82,24 @@ namespace VehicleMainDLL
         FindVehicleMainByVehicleNumberDataSet aFindVehicleMainByVehicleNumberDataSet;
         FindVehicleMainByVehicleNumberDataSetTableAdapters.FindVehicleMainByVehicleNumberTableAdapter aFindVehicleMainByVehicleNumberTableAdapter;
 
+        FindVehicleMainToDeactivateDataSet aFindVehicleMainToDeactivateDataSet;
+        FindVehicleMainToDeactivateDataSetTableAdapters.FindVehicleMainToDeactivateTableAdapter aFindVehicleMainToDeactivateTableAdapter;
+
+        public FindVehicleMainToDeactivateDataSet FindVehicleMainToDeactivate()
+        {
+            try
+            {
+                aFindVehicleMainToDeactivateDataSet = new FindVehicleMainToDeactivateDataSet();
+                aFindVehicleMainToDeactivateTableAdapter = new FindVehicleMainToDeactivateDataSetTableAdapters.FindVehicleMainToDeactivateTableAdapter();
+                aFindVehicleMainToDeactivateTableAdapter.Fill(aFindVehicleMainToDeactivateDataSet.FindVehicleMainToDeactivate);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Vehicle Main Class // Find Vehicle Main To Deactivate " + Ex.ToString());
+            }
+
+            return aFindVehicleMainToDeactivateDataSet;
+        }
         public FindVehicleMainByVehicleNumberDataSet FindVehicleMainByVehicleNumber(string strVehicleNumber)
         {
             try
